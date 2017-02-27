@@ -1,0 +1,49 @@
+{
+  "locations": {
+    "The Silvery Moon Tavern": {
+      "name": "The Silvery Moon Tavern",
+      "desc": "This is a simple tavern with a bar and several tables. To the south is a door to the outside. To the north is the kitchen. Up is the inn.",
+      "exits": {
+        "south": "Main Street 0",
+        "north": "Silvery Moon Tavern Kitchen",
+        "up": "Silvery Moon Inn"
+      }
+    },
+    "Silvery Moon Inn":{
+      "name":"The Silvery Moon Inn",
+      "desc":"You see a hallway with a three doors on each side",
+      "exits": {
+        "down":"The Silvery Moon Tavern",
+        "first door right" : "SMT Room 1",
+        "second door right" : "SMT Room 2",
+        "third door right" : "SMT Room 3",
+        "first door left" : "SMT Room 4",
+        "second door left" : "SMT Room 5",
+        "third door left" : "SMT Room 6"
+      }
+    },
+    "Main Street 0": {
+      "name": "Main Street",
+      "desc": "A cobblestone street with a street lantern",
+      "exits": {
+        "north": "The Silvery Moon Tavern",
+        "east": "Main Street 1",
+        "west": "Main Street -1"
+      }
+    },
+    "Main Street -1": {
+      "name": "Main Street",
+      "desc": "A cobblestone street with a street lantern",
+      "exits": {
+        "east":"Main Street 0"
+      }
+    },
+    "Main Street 1": {
+      "name": "Main Street",
+      "desc": "A cobblestone street with a street lantern",
+      "exits": {
+        "west" : "Main Street 0"
+      }
+    }
+  }
+}

@@ -1,4 +1,6 @@
 import sys
+from utils.print_color import printGreen
+
 from character import Character
 def starting_location():
     pc = Character()
@@ -11,4 +13,13 @@ def starting_location():
         command = raw_input('=: ')
     raw_input('Thanks for playing, press enter to exit.')
 
+test_string = """     \n
+              |
+              |
+            --#--
+              |
+              |
+                 """
+
+printGreen(test_string)
 starting_location()

@@ -19,15 +19,28 @@ class Character:
             print self.current_location.description
         elif 'help' in command:
             print commands.help()
-        elif 'move' in command:
-            print 'Here are your exits: '
-            for exits in self.current_location.exits:
-                print exits
-            dir = raw_input("where do you want to move to: ")
-            try:
-                self.current_location = locations.get_location(self.current_location.exits[dir])
-            except:
-                print 'You cannot go that way'
-            print self.current_location.description
+        if 'north' in command:
+            self.move(command)
+        elif 'south' in command:
+            self.move(command)
+        elif 'east' in command:
+            self.move(command)
+        elif 'west' in command:
+            self.move(command)
+        elif 'up' in command:
+            self.move(command)
+        elif 'down' in command:
+            self.move(command)
+        elif 'forward' in command:
+            self.move(command)
+        elif 'back' in command:
+            self.move(command)
         else:
             print 'Invalid Command'
+
+    def move(self, command):
+        try:
+            self.current_location = locations.get_location(self.current_location.exits[command])
+        except:
+            print 'You cannot go that way'
+        print self.current_location.description

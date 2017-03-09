@@ -19,7 +19,9 @@ class Character:
             print self.current_location.description
         elif 'help' in command:
             print commands.help()
-        if 'north' in command:
+        if 'north' or 'n' in command:
+            if 'n' in command:
+                command = 'north'
             self.move(command)
         elif 'south' in command:
             self.move(command)

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/zorktherapy.iml" filepath="$PROJECT_DIR$/.idea/zorktherapy.iml" />
+      <module fileurl="file://C:/bench/the_grid/.idea/thegrid.iml" filepath="C:/bench/the_grid/.idea/thegrid.iml" />
     </modules>
   </component>
 </project>

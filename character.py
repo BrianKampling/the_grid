@@ -1,5 +1,6 @@
 import locations
 import commands
+from utils.print_color import print_color
 
 
 class Character:
@@ -11,15 +12,16 @@ class Character:
     def start_pc(self, name):
         self.name = name
         self.current_location = locations.get_location('The Silvery Moon Tavern')
+
     def print_name(self):
         print self.name
 
     def process_command(self, command):
         if 'look' in command:
-            print self.current_location.description
+            print_color('\n' + self.current_location.description, 'green')
         elif 'help' in command:
             print commands.help()
-        if 'north' or 'n' in command:
+        elif 'north' or 'n' in command:
             if 'n' in command:
                 command = 'north'
             self.move(command)
@@ -38,11 +40,11 @@ class Character:
         elif 'back' in command:
             self.move(command)
         else:
-            print 'Invalid Command'
+            print_color('\nInvalid Command', 'red')
 
     def move(self, command):
         try:
             self.current_location = locations.get_location(self.current_location.exits[command])
         except:
-            print 'You cannot go that way'
-        print self.current_location.description
+            print_color('\nYou cannot go that way', 'red')
+        print_color('\n' + self.current_location.description, 'green')

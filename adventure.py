@@ -1,25 +1,19 @@
 import sys
-from utils.print_color import printGreen
+from utils.print_color import print_color
 
 from character import Character
 def starting_location():
     pc = Character()
-    name = raw_input('Welcome to the land of mystery what is your name: ')
+    print_color('\nWelcome to the land of mystery what is your name: ', 'green')
+    name = raw_input()
     pc.start_pc(name)
-    print 'Welcome ' + pc.name
-    command = raw_input('What do you want to do? ')
+    print_color('\nWelcome ' + pc.name, 'green')
+    command = raw_input('\nWhat do you want to do? ')
     while 'quit' not in command:
         pc.process_command(command)
-        command = raw_input('=: ')
+        print_color('\n' + pc.name, 'cyan')
+        print_color('=: ', 'green')
+        command = raw_input()
     raw_input('Thanks for playing, press enter to exit.')
 
-test_string = """     \n
-              |
-              |
-            --#--
-              |
-              |
-                 """
-
-printGreen(test_string)
 starting_location()
